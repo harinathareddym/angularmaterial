@@ -1,0 +1,25 @@
+
+<ng-container>
+<mat-toolbar color="primary" class="sk-header">
+  <button mat-icon-button aria-label="icon-button with menu icon" (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Menu</span>
+</mat-toolbar>
+<mat-sidenav-container class="sk-container">
+  <mat-sidenav mode="side" class="sk-sidenav" #sidenav opened [fixedInViewport]="false" [fixedTopGap]="0"
+  [fixedBottomGap]="0">
+  <mat-nav-list role="navigation">
+      <a mat-list-item routerLink="search" [routerLinkActive]="['active-link']"> Search</a>
+      <a mat-list-item routerLink="login" [routerLinkActive]="['active-link']"> Login</a>
+      <a mat-list-item routerLink="question" [routerLinkActive]="['active-link']"> Post Question</a>
+  </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>  
+    <div class="content-manage">
+      <router-outlet></router-outlet>  
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<mat-toolbar class="sk-footer" color="primary">2022</mat-toolbar>
+</ng-container>
